@@ -1,0 +1,43 @@
+#pass word generator
+import random
+
+small = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
+'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+#list of all caps alphabet
+caps = [x.upper() for x in small]
+
+#random numbers 0-9
+numbers = ["0","1","2","3","4","5","6","7","8","9"]
+# special character
+special_symbols = ['!','@','#','$','%','^','&','*']
+
+#input for passworw specification
+spec1 = int(input("How many upper case:"))
+spec2 = int(input("How many lower  case:"))
+spec3 = int(input("How many numbers case:"))
+spec4 = int(input("How many special characters:"))
+
+password_list = []
+for i in range(1,spec1 +1):
+    c_char = random.choice(caps)
+    password_list += c_char
+for i in range(1,spec2 +1):
+    c_char = random.choice(small)
+    password_list += c_char
+for i in range(1,spec3 +1):
+    c_char = random.choice(numbers)
+    password_list += c_char
+for i in range(1,spec4 +1):
+    c_char = random.choice(special_symbols)
+    password_list += c_char
+print(password_list)
+random.shuffle(password_list)
+print(password_list)
+password = ""
+for i in password_list:
+    password += i
+print(password)
+
+
+
